@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Year 4 Academic Results - Academic Portfolio Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Facademicp5310back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 relative overflow-x-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="senior-pattern" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse">
+                    <circle cx="12.5" cy="12.5" r="1.5" fill="#2563EB"/>
+                    <path d="M8,8 L17,17 M17,8 L8,17" stroke="#475569" stroke-width="0.8" opacity="0.4"/>
+                    <rect x="10" y="10" width="5" height="5" fill="none" stroke="#F59E0B" stroke-width="0.5" opacity="0.6"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#senior-pattern)"/>
+        </svg>
+    </div>
+
+    <!-- Floating Achievement Elements -->
+    <div class="absolute top-16 left-8 w-20 h-20 bg-gradient-academic rounded-full opacity-15 animate-pulse"></div>
+    <div class="absolute top-32 right-16 w-16 h-16 bg-amber-200 rounded-lg opacity-20 transform rotate-45"></div>
+    <div class="absolute bottom-40 left-16 w-24 h-24 bg-blue-100 rounded-full opacity-10"></div>
+    <div class="absolute bottom-20 right-12 w-18 h-18 bg-slate-300 rounded-lg opacity-20 transform -rotate-12"></div>
+
+    <!-- Header -->
+    <header class="relative z-20 bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-subtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center justify-center w-10 h-10 bg-gradient-academic rounded-lg shadow-card">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gradient-primary">Academic Portfolio Pro</h1>
+                        <p class="text-xs text-slate-500">Senior Year Excellence</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="academic_profile_hub.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">
+                        <i class="fas fa-user-graduate mr-2"></i>Profile Hub
+                    </a>
+                    <div class="relative group">
+                        <button class="flex items-center text-slate-600 hover:text-blue-600 font-medium transition-colors">
+                            <i class="fas fa-chart-line mr-2"></i>Academic Results
+                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-elevated border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="py-2">
+                                <a href="year_1_academic_results.html" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors">
+                                    <i class="fas fa-seedling mr-2 text-green-500"></i>Year 1 - Foundation
+                                </a>
+                                <a href="year_2_academic_results.html" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors">
+                                    <i class="fas fa-tree mr-2 text-blue-500"></i>Year 2 - Development
+                                </a>
+                                <a href="year_3_academic_results.html" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors">
+                                    <i class="fas fa-rocket mr-2 text-purple-500"></i>Year 3 - Advancement
+                                </a>
+                                <a href="year_4_academic_results.html" class="block px-4 py-2 text-sm text-blue-600 bg-blue-50 font-medium">
+                                    <i class="fas fa-crown mr-2 text-amber-500"></i>Year 4 - Mastery
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="login_portal.html" class="btn-primary text-sm px-4 py-2">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-blue-600 transition-colors">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="md:hidden bg-white border-t border-slate-200 hidden">
+            <div class="px-4 py-3 space-y-3">
+                <a href="academic_profile_hub.html" class="block text-slate-600 hover:text-blue-600 font-medium transition-colors">
+                    <i class="fas fa-user-graduate mr-2"></i>Profile Hub
+                </a>
+                <div class="space-y-2">
+                    <p class="text-sm font-medium text-slate-700">Academic Results:</p>
+                    <a href="year_1_academic_results.html" class="block pl-4 text-sm text-slate-600 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-seedling mr-2 text-green-500"></i>Year 1
+                    </a>
+                    <a href="year_2_academic_results.html" class="block pl-4 text-sm text-slate-600 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-tree mr-2 text-blue-500"></i>Year 2
+                    </a>
+                    <a href="year_3_academic_results.html" class="block pl-4 text-sm text-slate-600 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-rocket mr-2 text-purple-500"></i>Year 3
+                    </a>
+                    <a href="year_4_academic_results.html" class="block pl-4 text-sm text-blue-600 font-medium">
+                        <i class="fas fa-crown mr-2 text-amber-500"></i>Year 4
+                    </a>
+                </div>
+                <a href="login_portal.html" class="block text-slate-600 hover:text-blue-600 font-medium transition-colors">
+                    <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Page Header -->
+        <section class="mb-8">
+            <div class="professional-card">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-2">
+                            <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl flex items-center justify-center shadow-card">
+                                <i class="fas fa-crown text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h1 class="text-3xl font-bold text-gradient-primary">Year 4 - Senior Excellence</h1>
+                                <p class="text-slate-600">Capstone Projects & Professional Readiness</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 text-sm text-slate-500">
+                            <span><i class="fas fa-calendar mr-1"></i>Academic Year 2024-2025</span>
+                            <span><i class="fas fa-graduation-cap mr-1"></i>Final Year</span>
+                            <span><i class="fas fa-clock mr-1"></i>Updated September 1, 2025</span>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-3xl font-bold text-amber-600 mb-1">3.92</div>
+                        <div class="text-sm text-slate-600">Cumulative GPA</div>
+                        <div class="achievement-badge mt-2">
+                            <i class="fas fa-medal mr-1"></i>Summa Cum Laude
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="text-center p-4 bg-white rounded-lg border border-slate-200">
+                        <div class="text-2xl font-bold text-blue-600 mb-1">42</div>
+                        <div class="text-sm text-slate-600">Credits Completed</div>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-lg border border-slate-200">
+                        <div class="text-2xl font-bold text-green-600 mb-1">3</div>
+                        <div class="text-sm text-slate-600">Capstone Projects</div>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-lg border border-slate-200">
+                        <div class="text-2xl font-bold text-purple-600 mb-1">2</div>
+                        <div class="text-sm text-slate-600">Research Papers</div>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-lg border border-slate-200">
+                        <div class="text-2xl font-bold text-amber-600 mb-1">5</div>
+                        <div class="text-sm text-slate-600">Industry Connections</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Four-Year Progression Analytics -->
+        <section class="mb-8">
+            <div class="professional-card">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-semibold text-slate-800">
+                        <i class="fas fa-chart-line text-blue-600 mr-3"></i>Four-Year Academic Journey
+                    </h2>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-slate-600">Trend Analysis</span>
+                        <i class="fas fa-trending-up text-green-500"></i>
+                    </div>
+                </div>
+
+                <!-- GPA Progression Chart -->
+                <div class="mb-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-medium text-slate-700">GPA Progression</h3>
+                        <div class="text-sm text-slate-500">Consistent Excellence</div>
+                    </div>
+                    <div class="relative h-64 bg-slate-50 rounded-lg p-4">
+                        <svg class="w-full h-full" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Grid lines -->
+                            <defs>
+                                <pattern id="grid" width="50" height="40" patternUnits="userSpaceOnUse">
+                                    <path d="M 50 0 L 0 0 0 40" fill="none" stroke="#E2E8F0" stroke-width="1"/>
+                                </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#grid)"/>
+                            
+                            <!-- Y-axis labels -->
+                            <text x="10" y="20" class="text-xs fill-slate-500">4.0</text>
+                            <text x="10" y="60" class="text-xs fill-slate-500">3.5</text>
+                            <text x="10" y="100" class="text-xs fill-slate-500">3.0</text>
+                            <text x="10" y="140" class="text-xs fill-slate-500">2.5</text>
+                            <text x="10" y="180" class="text-xs fill-slate-500">2.0</text>
+                            
+                            <!-- X-axis labels -->
+                            <text x="80" y="195" class="text-xs fill-slate-500">Year 1</text>
+                            <text x="150" y="195" class="text-xs fill-slate-500">Year 2</text>
+                            <text x="220" y="195" class="text-xs fill-slate-500">Year 3</text>
+                            <text x="290" y="195" class="text-xs fill-slate-500">Year 4</text>
+                            
+                            <!-- GPA Line -->
+                            <polyline points="80,60 150,45 220,35 290,25" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+                            
+                            <!-- Data points -->
+                            <circle cx="80" cy="60" r="4" fill="#2563EB"/>
+                            <circle cx="150" cy="45" r="4" fill="#2563EB"/>
+                            <circle cx="220" cy="35" r="4" fill="#2563EB"/>
+                            <circle cx="290" cy="25" r="4" fill="#F59E0B"/>
+                            
+                            <!-- GPA Values -->
+                            <text x="75" y="50" class="text-xs fill-slate-700 font-medium">3.45</text>
+                            <text x="145" y="35" class="text-xs fill-slate-700 font-medium">3.67</text>
+                            <text x="215" y="25" class="text-xs fill-slate-700 font-medium">3.84</text>
+                            <text x="285" y="15" class="text-xs fill-amber-600 font-bold">3.92</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Achievement Milestones -->
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="p-4 bg-green-50 rounded-lg border border-green-200">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <i class="fas fa-seedling text-green-600"></i>
+                            <span class="font-medium text-green-800">Year 1</span>
+                        </div>
+                        <div class="text-sm text-green-700">Foundation Building</div>
+                        <div class="text-xs text-green-600 mt-1">GPA: 3.45</div>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <i class="fas fa-tree text-blue-600"></i>
+                            <span class="font-medium text-blue-800">Year 2</span>
+                        </div>
+                        <div class="text-sm text-blue-700">Skill Development</div>
+                        <div class="text-xs text-blue-600 mt-1">GPA: 3.67</div>
+                    </div>
+                    <div class="p-4 bg-purple-50 rounded-lg border border-purple-200">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <i class="fas fa-rocket text-purple-600"></i>
+                            <span class="font-medium text-purple-800">Year 3</span>
+                        </div>
+                        <div class="text-sm text-purple-700">Advanced Learning</div>
+                        <div class="text-xs text-purple-600 mt-1">GPA: 3.84</div>
+                    </div>
+                    <div class="p-4 bg-amber-50 rounded-lg border border-amber-200">
+                        <div class="flex items-center space-x-2 mb-2">
+                            <i class="fas fa-crown text-amber-600"></i>
+                            <span class="font-medium text-amber-800">Year 4</span>
+                        </div>
+                        <div class="text-sm text-amber-700">Mastery & Excellence</div>
+                        <div class="text-xs text-amber-600 mt-1">GPA: 3.92</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capstone Projects -->
+        <section class="mb-8">
+            <div class="professional-card">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-semibold text-slate-800">
+                        <i class="fas fa-project-diagram text-purple-600 mr-3"></i>Capstone Projects
+                    </h2>
+                    <div class="achievement-badge">
+                        <i class="fas fa-star mr-1"></i>Excellence Award
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project 1 -->
+                    <div class="card p-6 hover:shadow-elevated transition-all duration-300">
+                        <div class="relative mb-4">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="AI Healthcare Platform" class="w-full h-48 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                            <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                                A+
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">AI Healthcare Platform</h3>
+                        <p class="text-sm text-slate-600 mb-3">Machine learning system for early disease detection using medical imaging data with 94% accuracy rate.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Python</span>
+                                <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">TensorFlow</span>
+                            </div>
+                            <button class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="card p-6 hover:shadow-elevated transition-all duration-300">
+                        <div class="relative mb-4">
+                            <img src="https://images.pixabay.com/photo/2020/08/09/11/31/blockchain-5475745_1280.jpg" alt="Blockchain Supply Chain" class="w-full h-48 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                            <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                                A
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">Blockchain Supply Chain</h3>
+                        <p class="text-sm text-slate-600 mb-3">Decentralized tracking system ensuring transparency and authenticity in global supply chains.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">Solidity</span>
+                                <span class="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded">Web3</span>
+                            </div>
+                            <button class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="card p-6 hover:shadow-elevated transition-all duration-300">
+                        <div class="relative mb-4">
+                            <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Sustainable Energy Dashboard" class="w-full h-48 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                            <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                                A+
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-800 mb-2">Sustainable Energy Dashboard</h3>
+                        <p class="text-sm text-slate-600 mb-3">Real-time monitoring and optimization platform for renewable energy systems with predictive analytics.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">React</span>
+                                <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Node.js</span>
+                            </div>
+                            <button class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Performance -->
+        <section class="mb-8">
+            <div class="professional-card">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-semibold text-slate-800">
+                        <i class="fas fa-graduation-cap text-blue-600 mr-3"></i>Senior Year Courses
+                    </h2>
+                    <div class="text-sm text-slate-600">Fall 2024 & Spring 2025</div>
+                </div>
+
+                <!-- Course Performance Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="border-b border-slate-200">
+                                <th class="text-left py-3 px-4 font-semibold text-slate-700">Course</th>
+                                <th class="text-center py-3 px-4 font-semibold text-slate-700">Credits</th>
+                                <th class="text-center py-3 px-4 font-semibold text-slate-700">Grade</th>
+                                <th class="text-center py-3 px-4 font-semibold text-slate-700">GPA Points</th>
+                                <th class="text-left py-3 px-4 font-semibold text-slate-700">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-4">
+                                    <div>
+                                        <div class="font-medium text-slate-800">Advanced Machine Learning</div>
+                                        <div class="text-sm text-slate-500">IS 4850 - Fall 2024</div>
+                                    </div>
+                                </td>
+                                <td class="text-center py-4 px-4 text-slate-600">4</td>
+                                <td class="text-center py-4 px-4">
+                                    <span class="grade-display">A+</span>
+                                </td>
+                                <td class="text-center py-4 px-4 font-mono text-slate-700">4.00</td>
+                                <td class="py-4 px-4">
+                                    <span class="achievement-badge">
+                                        <i class="fas fa-star mr-1"></i>Outstanding
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-4">
+                                    <div>
+                                        <div class="font-medium text-slate-800">Senior Capstone Project</div>
+                                        <div class="text-sm text-slate-500">IS 4990 - Fall 2024</div>
+                                    </div>
+                                </td>
+                                <td class="text-center py-4 px-4 text-slate-600">6</td>
+                                <td class="text-center py-4 px-4">
+                                    <span class="grade-display">A+</span>
+                                </td>
+                                <td class="text-center py-4 px-4 font-mono text-slate-700">4.00</td>
+                                <td class="py-4 px-4">
+                                    <span class="achievement-badge">
+                                        <i class="fas fa-trophy mr-1"></i>Excellence Award
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-4">
+                                    <div>
+                                        <div class="font-medium text-slate-800">Distributed Systems</div>
+                                        <div class="text-sm text-slate-500">IS 4780 - Fall 2024</div>
+                                    </div>
+                                </td>
+                                <td class="text-center py-4 px-4 text-slate-600">3</td>
+                                <td class="text-center py-4 px-4">
+                                    <span class="grade-display">A</span>
+                                </td>
+                                <td class="text-center py-4 px-4 font-mono text-slate-700">4.00</td>
+                                <td class="py-4 px-4">
+                                    <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-medium">
+                                        <i class="fas fa-check mr-1"></i>Completed
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-4">
+                                    <div>
+                                        <div class="font-medium text-slate-800">Information Technology Ethics & Society</div>
+                                        <div class="text-sm text-slate-500">IS 4100 - Spring 2025</div>
+                                    </div>
+                                </td>
+                                <td class="text-center py-4 px-4 text-slate-600">3</td>
+                                <td class="text-center py-4 px-4">
+                                    <span class="grade-display">A</span>
+                                </td>
+                                <td class="text-center py-4 px-4 font-mono text-slate-700">4.00</td>
+                                <td class="py-4 px-4">
+                                    <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-medium">
+                                        <i class="fas fa-clock mr-1"></i>In Progress
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-4">
+                                    <div>
+                                        <div class="font-medium text-slate-800">Professional Internship</div>
+                                        <div class="text-sm text-slate-500">IS 4950 - Spring 2025</div>
+                                    </div>
+                                </td>
+                                <td class="text-center py-4 px-4 text-slate-600">6</td>
+                                <td class="text-center py-4 px-4">
+                                    <span class="grade-display">A</span>
+                                </td>
+                                <td class="text-center py-4 px-4 font-mono text-slate-700">4.00</td>
+                                <td class="py-4 px-4">
+                                    <span class="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-medium">
+                                        <i class="fas fa-briefcase mr-1"></i>Industry Experience
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Semester Summary -->
+                <div class="mt-6 grid md:grid-cols-3 gap-4">
+                    <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600 mb-1">22</div>
+                            <div class="text-sm text-blue-700">Total Credits</div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded-lg border border-green-200">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600 mb-1">3.95</div>
+                            <div class="text-sm text-green-700">Semester GPA</div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-amber-50 rounded-lg border border-amber-200">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-amber-600 mb-1">3.92</div>
+                            <div class="text-sm text-amber-700">Cumulative GPA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research & Publications -->
+        <section class="mb-8">
+            <div class="professional-card">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-semibold text-slate-800">
+                        <i class="fas fa-microscope text-green-600 mr-3"></i>Research & Publications
+                    </h2>
+                    <div class="achievement-badge">
+                        <i class="fas fa-award mr-1"></i>Published Author
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Research Paper 1 -->
+                    <div class="card p-6 hover:shadow-elevated transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-file-alt text-white text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-slate-800 mb-2">
+                                    "Machine Learning Approaches for Early Disease Detection in Medical Imaging"
+                                </h3>
+                                <p class="text-sm text-slate-600 mb-3">
+                                    Published in the International Journal of Medical Informatics, this research presents novel deep learning architectures achieving 94% accuracy in early-stage disease detection using radiological images.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-4 text-sm text-slate-500">
+                                        <span><i class="fas fa-calendar mr-1"></i>March 2025</span>
+                                        <span><i class="fas fa-eye mr-1"></i>1,247 views</span>
+                                        <span><i class="fas fa-quote-left mr-1"></i>23 citations</span>
+                                    </div>
+                                    <button class="text-blue-600 hover:text-blue-700 font-medium">
+                                        Read Abstract <i class="fas fa-external-link-alt ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Research Paper 2 -->
+                    <div class="card p-6 hover:shadow-elevated transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-leaf text-white text-xl"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-slate-800 mb-2">
+                                    "Blockchain-Based Supply Chain Transparency: A Sustainable Approach"
+                                </h3>
+                                <p class="text-sm text-slate-600 mb-3">
+                                    Accepted for presentation at the IEEE International Conference on Sustainable Technology, this paper explores decentralized solutions for supply chain transparency and environmental impact tracking.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-4 text-sm text-slate-500">
+                                        <span><i class="fas fa-calendar mr-1"></i>June 2025</span>
+                                        <span><i class="fas fa-users mr-1"></i>Conference Presentation</span>
+                                        <span><i class="fas fa-award mr-1"></i>Best Paper Nominee</span>
+                                    </div>
+                                    <button class="text-blue-600 hover:text-blue-700 font-medium">
+                                        View Slides <i class="fas fa-external-link-alt ml-1"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Development -->
+        <section class="mb-8">
+            <div class="professional-card">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-semibold text-slate-800">
+                        <i class="fas fa-briefcase text-purple-600 mr-3"></i>Professional Development
+                    </h2>
+                    <div class="text-sm text-slate-600">Career Readiness</div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Industry Connections -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-medium text-slate-700 mb-4">
+                            <i class="fas fa-network-wired text-blue-600 mr-2"></i>Industry Connections
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-slate-200">
+                                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=2826&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Tech Company" class="w-12 h-12 rounded-lg object-cover" loading="lazy" onerror="this.src='https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                                <div>
+                                    <div class="font-medium text-slate-800">TechCorp Solutions</div>
+                                    <div class="text-sm text-slate-600">Software Engineering Internship</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-slate-200">
+                                <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Healthcare AI" class="w-12 h-12 rounded-lg object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                                <div>
+                                    <div class="font-medium text-slate-800">HealthAI Innovations</div>
+                                    <div class="text-sm text-slate-600">Research Collaboration</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-3 bg-white rounded-lg border border-slate-200">
+                                <img src="https://images.pixabay.com/photo/2016/11/27/21/42/stock-1863880_1280.jpg" alt="Startup Accelerator" class="w-12 h-12 rounded-lg object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                                <div>
+                                    <div class="font-medium text-slate-800">Innovation Hub</div>
+                                    <div class="text-sm text-slate-600">Startup Mentorship Program</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications & Skills -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-medium text-slate-700 mb-4">
+                            <i class="fas fa-certificate text-green-600 mr-2"></i>Certifications & Skills
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-green-50 rounded-lg border border-green-200">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="font-medium text-green-800">AWS Solutions Architect</div>
+                                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Certified</span>
+                                </div>
+                                <div class="text-sm text-green-600">Professional level cloud architecture certification</div>
+                            </div>
+                            <div class="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="font-medium text-blue-800">Google Cloud ML Engineer</div>
+                                    <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Certified</span>
+                                </div>
+                                <div class="text-sm text-blue-600">Machine learning on Google Cloud Platform</div>
+                            </div>
+                            <div class="p-3 bg-purple-50 rounded-lg border border-purple-200">
+                                <div class="flex items-center justify-between mb-2">
+                                    <div class="font-medium text-purple-800">Scrum Master (PSM I)</div>
+                                    <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">Certified</span>
+                                </div>
+                                <div class="text-sm text-purple-600">Agile project management methodology</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Footer -->
+        <section class="mb-8">
+            <div class="professional-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-lg font-medium text-slate-800 mb-2">Academic Journey Complete</h3>
+                        <p class="text-slate-600">Explore the complete four-year academic progression and achievements.</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="year_3_academic_results.html" class="btn-secondary text-sm px-4 py-2">
+                            <i class="fas fa-arrow-left mr-2"></i>Year 3 Results
+                        </a>
+                        <a href="academic_profile_hub.html" class="btn-primary text-sm px-4 py-2">
+                            <i class="fas fa-home mr-2"></i>Profile Hub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-slate-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-academic rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Academic Portfolio Pro</div>
+                        <div class="text-sm text-slate-400">Senior Year Excellence</div>
+                    </div>
+                </div>
+                <div class="text-sm text-slate-400">
+                    © 2025 Academic Portfolio Pro. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+
+            // Add animation classes on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all cards
+            document.querySelectorAll('.professional-card, .card').forEach(card => {
+                observer.observe(card);
+            });
+
+            // Project detail buttons
+            document.querySelectorAll('button').forEach(button => {
+                if (button.textContent.includes('View Details')) {
+                    button.addEventListener('click', function() {
+                        // Simulate project detail modal or navigation
+                        const projectName = this.closest('.card').querySelector('h3').textContent;
+                        alert(`Opening detailed view for: ${projectName}\n\nThis would typically open a detailed project showcase with:\n- Complete project documentation\n- Technical specifications\n- Demo videos\n- Source code links\n- Performance metrics`);
+                    });
+                }
+            });
+
+            // Research paper buttons
+            document.querySelectorAll('button').forEach(button => {
+                if (button.textContent.includes('Read Abstract') || button.textContent.includes('View Slides')) {
+                    button.addEventListener('click', function() {
+                        const paperTitle = this.closest('.card').querySelector('h3').textContent;
+                        alert(`Opening research material: ${paperTitle}\n\nThis would typically provide:\n- Full abstract\n- Research methodology\n- Results and conclusions\n- Citation information\n- Download links`);
+                    });
+                }
+            });
+
+            // Add hover effects to table rows
+            document.querySelectorAll('tbody tr').forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(4px)';
+                    this.style.transition = 'transform 200ms ease';
+                });
+                
+                row.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+
+            // Animate statistics on page load
+            setTimeout(() => {
+                const stats = document.querySelectorAll('.text-2xl.font-bold');
+                stats.forEach((stat, index) => {
+                    setTimeout(() => {
+                        stat.style.transform = 'scale(1.1)';
+                        stat.style.transition = 'transform 300ms ease';
+                        setTimeout(() => {
+                            stat.style.transform = 'scale(1)';
+                        }, 300);
+                    }, index * 100);
+                });
+            }, 500);
+
+            // Add subtle parallax effect to background elements
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.absolute');
+                
+                parallaxElements.forEach((element, index) => {
+                    const speed = 0.5 + (index * 0.1);
+                    element.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

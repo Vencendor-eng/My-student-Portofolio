@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Profile Hub - Academic Portfolio Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Facademicp5310back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="profile-pattern" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse">
+                    <circle cx="12.5" cy="12.5" r="1.5" fill="#1e3a8a"/>
+                    <rect x="8" y="8" width="9" height="9" fill="none" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#profile-pattern)"/>
+        </svg>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="relative z-20 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 backdrop-blur-sm border-b-2 border-blue-700 sticky top-0 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-sky-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Academic Portfolio Pro</h1>
+                        <p class="text-xs text-blue-200">Professional Academic Showcase</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="academic_profile_hub.html" class="text-white font-medium bg-blue-600 px-4 py-2 rounded-lg border border-blue-500 shadow-md hover:bg-blue-700 hover:shadow-lg transition-all duration-300">
+                        <i class="fas fa-user-graduate mr-2"></i>Profile Hub
+                    </a>
+                    <div class="relative group">
+                        <button class="flex items-center text-blue-200 hover:text-white hover:bg-blue-700 px-3 py-2 rounded-lg transition-all duration-300">
+                            <i class="fas fa-chart-line mr-2"></i>Academic Results
+                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 bg-blue-800 rounded-lg shadow-2xl border border-blue-600 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <a href="year_1_academic_results.html" class="block px-4 py-3 text-blue-100 hover:bg-blue-700 hover:text-white transition-colors rounded-t-lg">
+                                <i class="fas fa-calendar-alt mr-2 text-sky-400"></i>Year 1 Results
+                            </a>
+                            <a href="year_2_academic_results.html" class="block px-4 py-3 text-blue-100 hover:bg-blue-700 hover:text-white transition-colors">
+                                <i class="fas fa-calendar-alt mr-2 text-sky-400"></i>Year 2 Results
+                            </a>
+                            <a href="year_3_academic_results.html" class="block px-4 py-3 text-blue-100 hover:bg-blue-700 hover:text-white transition-colors">
+                                <i class="fas fa-calendar-alt mr-2 text-sky-400"></i>Year 3 Results
+                            </a>
+                            <a href="year_4_academic_results.html" class="block px-4 py-3 text-blue-100 hover:bg-blue-700 hover:text-white transition-colors border-t border-blue-600 rounded-b-lg">
+                                <i class="fas fa-calendar-alt mr-2 text-sky-400"></i>Year 4 Results
+                            </a>
+                        </div>
+                    </div>
+                    <a href="login_portal.html" class="text-blue-200 hover:text-white hover:bg-blue-700 px-3 py-2 rounded-lg transition-all duration-300">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-blue-200 hover:text-white hover:bg-blue-700 p-2 rounded-lg">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="md:hidden bg-blue-900 border-t border-blue-700 hidden">
+            <div class="px-4 py-2 space-y-1">
+                <a href="academic_profile_hub.html" class="block px-3 py-2 text-white font-medium bg-blue-600 rounded-lg shadow-md">
+                    <i class="fas fa-user-graduate mr-2"></i>Profile Hub
+                </a>
+                <div class="px-3 py-2">
+                    <button id="mobileResultsToggle" class="flex items-center justify-between w-full text-blue-200 hover:text-white">
+                        <span><i class="fas fa-chart-line mr-2"></i>Academic Results</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div id="mobileResultsMenu" class="mt-2 ml-4 space-y-1 hidden">
+                        <a href="year_1_academic_results.html" class="block px-3 py-2 text-blue-200 hover:bg-blue-700 hover:text-white rounded transition-colors">Year 1</a>
+                        <a href="year_2_academic_results.html" class="block px-3 py-2 text-blue-200 hover:bg-blue-700 hover:text-white rounded transition-colors">Year 2</a>
+                        <a href="year_3_academic_results.html" class="block px-3 py-2 text-blue-200 hover:bg-blue-700 hover:text-white rounded transition-colors">Year 3</a>
+                        <a href="year_4_academic_results.html" class="block px-3 py-2 text-blue-200 hover:bg-blue-700 hover:text-white rounded transition-colors">Year 4</a>
+                    </div>
+                </div>
+                <a href="login_portal.html" class="block px-3 py-2 text-blue-200 hover:bg-blue-700 hover:text-white rounded-lg transition-colors">
+                    <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Profile Header Section -->
+<section class="professional-card mb-8">
+    <div class="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+        <!-- Profile Image -->
+        <div class="flex-shrink-0">
+            <div class="relative">
+                <img src="../assets/images/Vencedor-1756719927366.jpg" alt="Victor Lungu Profile" class="w-32 h-32 lg:w-40 lg:h-40 rounded-2xl object-cover shadow-elevated" onerror="this.src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400'; this.onerror=null;" />
+                <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center shadow-elevated">
+                    <i class="fas fa-graduation-cap text-white text-lg"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Info -->
+        <div class="flex-1">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+                <div>
+                    <h1 class="text-3xl lg:text-4xl font-bold text-slate-800 mb-2">Victor Lungu</h1>
+                    <p class="text-xl text-blue-600 font-medium mb-1">Information Systems and Technology</p>
+                    <p class="text-slate-600">Class of 2025 • Dean's List Scholar</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="achievement-badge">
+                        <i class="fas fa-star mr-1"></i>4.2 GPA
+                    </div>
+                    <div class="achievement-badge">
+                        <i class="fas fa-trophy mr-1"></i>Honors
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+                <div class="text-center p-3 bg-blue-50 rounded-lg border border-blue-200">
+                    <div class="text-2xl font-bold text-blue-600">4</div>
+                    <div class="text-sm text-slate-600">Years</div>
+                </div>
+                <div class="text-center p-3 bg-sky-50 rounded-lg border border-sky-200">
+                    <div class="text-2xl font-bold text-sky-600">128</div>
+                    <div class="text-sm text-slate-600">Credits</div>
+                </div>
+                <div class="text-center p-3 bg-emerald-50 rounded-lg">
+                    <div class="text-2xl font-bold text-emerald-600">15</div>
+                    <div class="text-sm text-slate-600">Projects</div>
+                </div>
+                <div class="text-center p-3 bg-purple-50 rounded-lg">
+                    <div class="text-2xl font-bold text-purple-600">8</div>
+                    <div class="text-sm text-slate-600">Awards</div>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="flex flex-wrap items-center gap-4 text-sm text-slate-600">
+                <div class="flex items-center">
+                    <i class="fas fa-envelope mr-2 text-blue-500"></i>
+                    <span>victorlungu33@gmail.com</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-phone mr-2 text-blue-500"></i>
+                    <span>260973649998</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-map-marker-alt mr-2 text-blue-500"></i>
+                    <span>Lusaka</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Biography Section -->
+        <section class="professional-card mb-8">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
+                    <i class="fas fa-user text-blue-600 text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-800">Academic Biography</h2>
+                    <p class="text-slate-600">My journey through information systems and technology</p>
+                </div>
+            </div>
+
+            <div class="prose prose-slate max-w-none">
+                <p class="text-lg text-slate-700 leading-relaxed mb-6">
+                    As a dedicated Information Systems and Technology student at University of Lusaka, I have consistently pursued excellence in both theoretical understanding and practical application. My academic journey began with a passion for problem-solving and has evolved into a comprehensive exploration of information systems, database management, and enterprise technology solutions.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-3 flex items-center">
+                            <i class="fas fa-graduation-cap mr-2 text-blue-600"></i>
+                            Academic Excellence
+                        </h3>
+                        <p class="text-slate-600 mb-4">
+                            Throughout my four years, I have maintained a 4.2 GPA while taking challenging coursework in systems analysis, database design, enterprise architecture, and technology management. My commitment to academic excellence has earned me a place on the Dean's List for six consecutive semesters.
+                        </p>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex items-center"><i class="fas fa-check text-emerald-500 mr-2"></i>Dean's List Scholar (6 semesters)</li>
+                            <li class="flex items-center"><i class="fas fa-check text-emerald-500 mr-2"></i>Magna Cum Laude Candidate</li>
+                            <li class="flex items-center"><i class="fas fa-check text-emerald-500 mr-2"></i>Information Systems Honor Society</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-800 mb-3 flex items-center">
+                            <i class="fas fa-lightbulb mr-2 text-amber-600"></i>
+                            Innovation & Research
+                        </h3>
+                        <p class="text-slate-600 mb-4">
+                            My passion extends beyond coursework into research and innovation. I have contributed to three published papers in enterprise information systems and led multiple student research initiatives that bridge theoretical concepts with real-world business applications.
+                        </p>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex items-center"><i class="fas fa-check text-emerald-500 mr-2"></i>3 Published Research Papers</li>
+                            <li class="flex items-center"><i class="fas fa-check text-emerald-500 mr-2"></i>Research Assistant (2 years)</li>
+                            <li class="flex items-center"><i class="fas fa-check text-emerald-500 mr-2"></i>Innovation Challenge Winner</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="text-slate-700 leading-relaxed">
+                    Looking forward, I am excited to apply my academic foundation in a professional setting where I can contribute to meaningful technological advancement while continuing to learn and grow. My goal is to work at the intersection of business strategy and technology implementation, creating solutions that make enterprise systems more efficient and accessible for everyone.
+                </p>
+            </div>
+        </section>
+
+        <!-- Academic Credentials Section -->
+        <section class="professional-card mb-8">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mr-4">
+                    <i class="fas fa-certificate text-emerald-600 text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-800">Academic Credentials</h2>
+                    <p class="text-slate-600">Comprehensive overview of academic achievements</p>
+                </div>
+            </div>
+
+            <!-- Academic Summary Table -->
+            <div class="overflow-x-auto mb-8">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50">
+                            <th class="text-left p-4 font-semibold text-slate-800 border-b border-slate-200">Academic Year</th>
+                            <th class="text-left p-4 font-semibold text-slate-800 border-b border-slate-200">Credits Completed</th>
+                            <th class="text-left p-4 font-semibold text-slate-800 border-b border-slate-200">GPA</th>
+                            <th class="text-left p-4 font-semibold text-slate-800 border-b border-slate-200">Recognition</th>
+                            <th class="text-left p-4 font-semibold text-slate-800 border-b border-slate-200">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 border-b border-slate-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar-alt text-blue-500 mr-2"></i>
+                                    <span class="font-medium">Year 1 (2021-2022)</span>
+                                </div>
+                            </td>
+                            <td class="p-4 border-b border-slate-100">32 Credits</td>
+                            <td class="p-4 border-b border-slate-100">
+                                <span class="grade-display">4.0</span>
+                            </td>
+                            <td class="p-4 border-b border-slate-100">
+                                <span class="achievement-badge">Dean's List</span>
+                            </td>
+                            <td class="p-4 border-b border-slate-100">
+                                <a href="year_1_academic_results.html" class="text-blue-600 hover:text-blue-700 font-medium">
+                                    View Details <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 border-b border-slate-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar-alt text-blue-500 mr-2"></i>
+                                    <span class="font-medium">Year 2 (2022-2023)</span>
+                                </div>
+                            </td>
+                            <td class="p-4 border-b border-slate-100">32 Credits</td>
+                            <td class="p-4 border-b border-slate-100">
+                                <span class="grade-display">4.1</span>
+                            </td>
+                            <td class="p-4 border-b border-slate-100">
+                                <span class="achievement-badge">Dean's List</span>
+                            </td>
+                            <td class="p-4 border-b border-slate-100">
+                                <a href="year_2_academic_results.html" class="text-blue-600 hover:text-blue-700 font-medium">
+                                    View Details <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 border-b border-slate-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar-alt text-blue-500 mr-2"></i>
+                                    <span class="font-medium">Year 3 (2023-2024)</span>
+                                </div>
+                            </td>
+                            <td class="p-4 border-b border-slate-100">32 Credits</td>
+                            <td class="p-4 border-b border-slate-100">
+                                <span class="grade-display">4.3</span>
+                            </td>
+                            <td class="p-4 border-b border-slate-100">
+                                <span class="achievement-badge">Summa Cum Laude</span>
+                            </td>
+                            <td class="p-4 border-b border-slate-100">
+                                <a href="year_3_academic_results.html" class="text-blue-600 hover:text-blue-700 font-medium">
+                                    View Details <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 border-b border-slate-100">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar-alt text-blue-500 mr-2"></i>
+                                    <span class="font-medium">Year 4 (2024-2025)</span>
+                                </div>
+                            </td>
+                            <td class="p-4 border-b border-slate-100">32 Credits</td>
+                            <td class="p-4 border-b border-slate-100">
+                                <span class="grade-display">4.4</span>
+                            </td>
+                            <td class="p-4 border-b border-slate-100">
+                                <span class="achievement-badge">Outstanding Scholar</span>
+                            </td>
+                            <td class="p-4 border-b border-slate-100">
+                                <a href="year_4_academic_results.html" class="text-blue-600 hover:text-blue-700 font-medium">
+                                    View Details <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Key Achievements -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-trophy text-blue-600 text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold text-slate-800">Academic Honors</h3>
+                    </div>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>• Magna Cum Laude Candidate</li>
+                        <li>• Dean's List (6 semesters)</li>
+                        <li>• Information Systems Honor Society</li>
+                        <li>• Outstanding Student Award 2024</li>
+                    </ul>
+                </div>
+
+                <div class="bg-emerald-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-medal text-emerald-600 text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold text-slate-800">Scholarships</h3>
+                    </div>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>• Presidential Scholarship</li>
+                        <li>• STEM Excellence Grant</li>
+                        <li>• Academic Merit Award</li>
+                        <li>• Research Fellowship</li>
+                    </ul>
+                </div>
+
+                <div class="bg-amber-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-star text-amber-600 text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold text-slate-800">Special Recognition</h3>
+                    </div>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>• Student Research Award</li>
+                        <li>• Innovation Challenge Winner</li>
+                        <li>• Peer Tutor Excellence</li>
+                        <li>• Leadership Recognition</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Carousel Section -->
+        <section class="professional-card mb-8">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mr-4">
+                    <i class="fas fa-images text-indigo-600 text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-800">Portfolio Gallery</h2>
+                    <p class="text-slate-600">A visual journey through my academic and professional achievements</p>
+                </div>
+            </div>
+
+            <!-- Image Carousel Container -->
+            <div class="relative bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-6 border border-slate-200">
+                <div class="carousel-container relative overflow-hidden rounded-xl">
+                    <!-- Carousel Images - Dynamically Generated -->
+                    <div class="carousel-track flex transition-transform duration-500 ease-in-out" id="carouselTrack">
+                        <!-- Images will be automatically loaded here -->
+                    </div>
+
+                    <!-- Navigation Arrows -->
+                    <button class="carousel-btn carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-slate-700 hover:text-blue-600 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 z-10">
+                        <i class="fas fa-chevron-left text-lg"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-slate-700 hover:text-blue-600 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 z-10">
+                        <i class="fas fa-chevron-right text-lg"></i>
+                    </button>
+
+                    <!-- Dots Indicator - Dynamically Generated -->
+                    <div class="flex justify-center space-x-2 mt-6" id="carouselDots">
+                        <!-- Dots will be automatically generated here -->
+                    </div>
+                </div>
+
+                <!-- Carousel Info -->
+                <div class="mt-6 text-center">
+                    <p class="text-slate-600 text-sm">
+                        <i class="fas fa-info-circle mr-2 text-blue-500"></i>
+                        Images automatically rotate every 5 seconds. Click dots or arrows to navigate manually.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Gallery Section -->
+        <section class="professional-card mb-8">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mr-4">
+                    <i class="fas fa-video text-red-600 text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-800">Video Portfolio</h2>
+                    <p class="text-slate-600">Showcase your presentations, projects, and academic work through video</p>
+                </div>
+            </div>
+
+            <!-- Video Upload Area -->
+            <div class="bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl p-6 border border-red-200 mb-6">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cloud-upload-alt text-red-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Upload Your Videos</h3>
+                    <p class="text-slate-600 mb-4">Add videos to showcase your academic presentations, project demonstrations, and achievements</p>
+                    
+                    <!-- Video Upload Form -->
+                    <div class="max-w-md mx-auto">
+                        <div class="flex items-center justify-center w-full">
+                            <label for="video-upload" class="flex flex-col items-center justify-center w-full h-32 border-2 border-red-300 border-dashed rounded-lg cursor-pointer bg-white hover:bg-red-50 transition-colors">
+                                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                    <i class="fas fa-video text-red-400 text-2xl mb-2"></i>
+                                    <p class="mb-2 text-sm text-slate-500">
+                                        <span class="font-semibold">Click to upload</span> or drag and drop
+                                    </p>
+                                    <p class="text-xs text-slate-400">MP4, WebM, or OGG (MAX. 100MB)</p>
+                                </div>
+                                <input id="video-upload" type="file" class="hidden" accept="video/*" multiple />
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 text-sm text-slate-500">
+                        <i class="fas fa-info-circle mr-2 text-red-500"></i>
+                        Supported formats: MP4, WebM, OGG. Maximum file size: 100MB per video.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Gallery Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="videoGallery">
+                <!-- Sample Video 1 -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="relative">
+                        <video class="w-full h-48 object-cover" controls poster="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800">
+                            <source src="#" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="absolute top-2 right-2">
+                            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-slate-800 mb-2">Project Presentation</h3>
+                        <p class="text-sm text-slate-600 mb-3">Enterprise Systems Design - Final Year Project</p>
+                        <div class="flex items-center justify-between text-xs text-slate-500">
+                            <span><i class="fas fa-clock mr-1"></i>15:30</span>
+                            <span><i class="fas fa-calendar mr-1"></i>Dec 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Video 2 -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="relative">
+                        <video class="w-full h-48 object-cover" controls poster="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800">
+                            <source src="#" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="absolute top-2 right-2">
+                            <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Featured</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-slate-800 mb-2">Research Presentation</h3>
+                        <p class="text-sm text-slate-600 mb-3">AI in Information Systems - Conference Talk</p>
+                        <div class="flex items-center justify-between text-xs text-slate-500">
+                            <span><i class="fas fa-clock mr-1"></i>22:15</span>
+                            <span><i class="fas fa-calendar mr-1"></i>Nov 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Video 3 -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
+                    <div class="relative">
+                        <video class="w-full h-48 object-cover" controls poster="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800">
+                            <source src="#" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="absolute top-2 right-2">
+                            <span class="bg-emerald-500 text-white text-xs px-2 py-1 rounded-full">Popular</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-slate-800 mb-2">Campus Tour</h3>
+                        <p class="text-sm text-slate-600 mb-3">University of Lusaka - Information Systems Department</p>
+                        <div class="flex items-center justify-between text-xs text-slate-500">
+                            <span><i class="fas fa-clock mr-1"></i>8:45</span>
+                            <span><i class="fas fa-calendar mr-1"></i>Oct 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Categories -->
+            <div class="mt-8">
+                <h3 class="text-lg font-semibold text-slate-800 mb-4">Video Categories</h3>
+                <div class="flex flex-wrap gap-3">
+                    <button class="px-4 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors">
+                        <i class="fas fa-presentation mr-2"></i>Presentations
+                    </button>
+                    <button class="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors">
+                        <i class="fas fa-project-diagram mr-2"></i>Project Demos
+                    </button>
+                    <button class="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-lg hover:bg-emerald-200 transition-colors">
+                        <i class="fas fa-graduation-cap mr-2"></i>Academic Work
+                    </button>
+                    <button class="px-4 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 transition-colors">
+                        <i class="fas fa-users mr-2"></i>Team Projects
+                    </button>
+                    <button class="px-4 py-2 bg-amber-100 text-amber-700 rounded-lg hover:bg-amber-200 transition-colors">
+                        <i class="fas fa-trophy mr-2"></i>Achievements
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Interests Section -->
+        <section class="professional-card mb-8">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
+                    <i class="fas fa-heart text-purple-600 text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-800">Personal Interests & Hobbies</h2>
+                    <p class="text-slate-600">Beyond academics - what drives my passion</p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Photography -->
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-camera text-blue-600 text-xl mr-3"></i>
+                        <h3 class="text-xl font-semibold text-slate-800">Photography</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">
+                        Capturing moments and exploring the world through my lens. I specialize in landscape and street photography, finding beauty in both natural and urban environments.
+                    </p>
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <img src="https://images.pixabay.com/photo-2016/11/29/05/45/astronomy-1867616_960_720.jpg" alt="Photography Sample 1" class="w-full h-20 object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=300&auto=format&fit=crop'; this.onerror=null;" />
+                        <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Photography Sample 2" class="w-full h-20 object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=300&auto=format&fit=crop'; this.onerror=null;" />
+                        <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=80&w=300&auto=format&fit=crop" alt="Photography Sample 3" class="w-full h-20 object-cover rounded-lg" onerror="this.src='https://images.pixabay.com/photo-2016/11/18/16/19/flowers-1835619_960_720.jpg'; this.onerror=null;" />
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <i class="fas fa-images mr-2"></i>
+                        <span>500+ photos captured • 3 exhibitions</span>
+                    </div>
+                </div>
+
+                <!-- Music Production -->
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-music text-purple-600 text-xl mr-3"></i>
+                        <h3 class="text-xl font-semibold text-slate-800">Music Production</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">
+                        Creating electronic music and soundscapes in my home studio. I enjoy blending different genres and experimenting with synthesizers and digital audio workstations.
+                    </p>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center justify-between p-3 bg-white rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fas fa-play-circle text-purple-600 mr-3"></i>
+                                <span class="font-medium text-slate-700">Ambient Dreams</span>
+                            </div>
+                            <span class="text-sm text-slate-500">3:42</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fas fa-play-circle text-purple-600 mr-3"></i>
+                                <span class="font-medium text-slate-700">Digital Horizons</span>
+                            </div>
+                            <span class="text-sm text-slate-500">4:15</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <i class="fas fa-headphones mr-2"></i>
+                        <span>12 tracks produced • 2K+ streams</span>
+                    </div>
+                </div>
+
+                <!-- Rock Climbing -->
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-mountain text-emerald-600 text-xl mr-3"></i>
+                        <h3 class="text-xl font-semibold text-slate-800">Rock Climbing</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">
+                        Challenging myself both mentally and physically through indoor and outdoor climbing. Member of the university climbing club and regular participant in regional competitions.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div class="text-center p-3 bg-white rounded-lg">
+                            <div class="text-xl font-bold text-emerald-600">5.11a</div>
+                            <div class="text-sm text-slate-600">Highest Grade</div>
+                        </div>
+                        <div class="text-center p-3 bg-white rounded-lg">
+                            <div class="text-xl font-bold text-emerald-600">15</div>
+                            <div class="text-sm text-slate-600">Outdoor Routes</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <i class="fas fa-trophy mr-2"></i>
+                        <span>Regional Competition Finalist</span>
+                    </div>
+                </div>
+
+                <!-- Volunteer Work -->
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hands-helping text-amber-600 text-xl mr-3"></i>
+                        <h3 class="text-xl font-semibold text-slate-800">Community Service</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">
+                        Dedicated to giving back to the community through tutoring underprivileged students in STEM subjects and participating in local environmental conservation efforts.
+                    </p>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex items-center p-3 bg-white rounded-lg">
+                            <i class="fas fa-chalkboard-teacher text-amber-600 mr-3"></i>
+                            <div>
+                                <div class="font-medium text-slate-700">STEM Tutor</div>
+                                <div class="text-sm text-slate-500">Local Community Center</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 bg-white rounded-lg">
+                            <i class="fas fa-leaf text-emerald-600 mr-3"></i>
+                            <div>
+                                <div class="font-medium text-slate-700">Environmental Volunteer</div>
+                                <div class="text-sm text-slate-500">City Parks Department</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>200+ volunteer hours annually</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills & Projects Section -->
+        <section class="professional-card mb-8">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mr-4">
+                    <i class="fas fa-code text-indigo-600 text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-800">Technical Skills & Projects</h2>
+                    <p class="text-slate-600">Showcasing technical competency and innovation</p>
+                </div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+                    <h3 class="text-lg font-semibold text-slate-800 mb-4 flex items-center">
+                        <i class="fas fa-laptop-code text-blue-600 mr-2"></i>
+                        Programming Languages
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-slate-700">Python</span>
+                            <div class="w-24 bg-slate-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-slate-700">JavaScript</span>
+                            <div class="w-24 bg-slate-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-slate-700">Java</span>
+                            <div class="w-24 bg-slate-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-slate-700">SQL</span>
+                            <div class="w-24 bg-slate-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-50 p-6 rounded-xl">
+                    <h3 class="text-lg font-semibold text-slate-800 mb-4 flex items-center">
+                        <i class="fas fa-tools text-emerald-600 mr-2"></i>
+                        Frameworks & Tools
+                    </h3>
+                    <div class="space-y-2 text-slate-700">
+                        <div class="flex items-center"><i class="fas fa-check text-emerald-500 mr-2"></i>React.js & Node.js</div>
+                        <div class="flex items-center"><i class="fas fa-check text-emerald-500 mr-2"></i>Django & Flask</div>
+                        <div class="flex items-center"><i class="fas fa-check text-emerald-500 mr-2"></i>Oracle & SAP</div>
+                        <div class="flex items-center"><i class="fas fa-check text-emerald-500 mr-2"></i>Docker & Kubernetes</div>
+                        <div class="flex items-center"><i class="fas fa-check text-emerald-500 mr-2"></i>Git & GitHub</div>
+                        <div class="flex items-center"><i class="fas fa-check text-emerald-500 mr-2"></i>AWS & Azure</div>
+                    </div>
+                </div>
+
+                <div class="bg-purple-50 p-6 rounded-xl">
+                    <h3 class="text-lg font-semibold text-slate-800 mb-4 flex items-center">
+                        <i class="fas fa-database text-purple-600 mr-2"></i>
+                        Databases & Systems
+                    </h3>
+                    <div class="space-y-2 text-slate-700">
+                        <div class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i>PostgreSQL & MySQL</div>
+                        <div class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i>MongoDB & Redis</div>
+                        <div class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i>Linux Administration</div>
+                        <div class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i>System Architecture</div>
+                        <div class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i>API Development</div>
+                        <div class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i>Enterprise Systems</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Projects -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-semibold text-slate-800 mb-4">Featured Projects</h3>
+                
+                <div class="grid lg:grid-cols-2 gap-6">
+                    <!-- Project 1 -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-elevated transition-all duration-300">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="text-lg font-semibold text-slate-800 mb-1">Enterprise Resource Planning System</h4>
+                                <p class="text-sm text-slate-500">Information Systems • Database Management</p>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="javascript:void(0)" class="text-slate-400 hover:text-blue-600 transition-colors">
+                                    <i class="fab fa-github text-lg"></i>
+                                </a>
+                                <a href="javascript:void(0)" class="text-slate-400 hover:text-blue-600 transition-colors">
+                                    <i class="fas fa-external-link-alt text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mb-4">
+                            Developed a comprehensive enterprise resource planning system that integrates inventory management, financial tracking, and human resources modules with advanced reporting capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Java</span>
+                            <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full">Oracle</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">Spring</span>
+                            <span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs rounded-full">Angular</span>
+                        </div>
+                        <div class="flex items-center text-sm text-slate-500">
+                            <i class="fas fa-star text-amber-500 mr-1"></i>
+                            <span>Winner - University Innovation Challenge 2024</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-elevated transition-all duration-300">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h4 class="text-lg font-semibold text-slate-800 mb-1">Smart Campus Management Platform</h4>
+                                <p class="text-sm text-slate-500">Systems Integration • IoT Solutions</p>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="javascript:void(0)" class="text-slate-400 hover:text-blue-600 transition-colors">
+                                    <i class="fab fa-github text-lg"></i>
+                                </a>
+                                <a href="javascript:void(0)" class="text-slate-400 hover:text-blue-600 transition-colors">
+                                    <i class="fas fa-external-link-alt text-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mb-4">
+                            Built a comprehensive platform for smart campus management featuring real-time facility monitoring, automated scheduling systems, and integrated student services with mobile accessibility.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Python</span>
+                            <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full">PostgreSQL</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">IoT</span>
+                            <span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs rounded-full">React</span>
+                        </div>
+                        <div class="flex items-center text-sm text-slate-500">
+                            <i class="fas fa-users text-emerald-500 mr-1"></i>
+                            <span>Adopted by 3 university departments</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Contact & Professional Networking -->
+<section class="professional-card">
+    <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mr-4">
+            <i class="fas fa-network-wired text-slate-600 text-xl"></i>
+        </div>
+        <div>
+            <h2 class="text-2xl font-bold text-slate-800">Professional Networking</h2>
+            <p class="text-slate-600">Connect with me for collaboration and opportunities</p>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+        <!-- Contact Information -->
+        <div>
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Contact Information</h3>
+            <div class="space-y-4">
+                <div class="flex items-center p-4 bg-slate-50 rounded-lg">
+                    <i class="fas fa-envelope text-blue-600 text-xl mr-4"></i>
+                    <div>
+                        <div class="font-medium text-slate-800">Email</div>
+                        <div class="text-slate-600">victorlungu33@gmail.com</div>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-slate-50 rounded-lg">
+                    <i class="fas fa-phone text-emerald-600 text-xl mr-4"></i>
+                    <div>
+                        <div class="font-medium text-slate-800">Phone</div>
+                        <div class="text-slate-600">260973649998</div>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-slate-50 rounded-lg">
+                    <i class="fas fa-map-marker-alt text-purple-600 text-xl mr-4"></i>
+                    <div>
+                        <div class="font-medium text-slate-800">Location</div>
+                        <div class="text-slate-600">Lusaka, Zambia</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social & Professional Links -->
+        <div>
+            <h3 class="text-lg font-semibold text-slate-800 mb-4">Professional Profiles</h3>
+            <div class="space-y-3">
+                <a href="javascript:void(0)" class="flex items-center p-4 bg-slate-50 rounded-lg hover:bg-blue-50 hover:border-blue-200 border border-transparent transition-all duration-300 group">
+                    <i class="fab fa-linkedin text-blue-600 text-xl mr-4"></i>
+                    <div class="flex-1">
+                        <div class="font-medium text-slate-800 group-hover:text-blue-600">LinkedIn</div>
+                        <div class="text-slate-600 text-sm">Professional networking and career updates</div>
+                    </div>
+                    <i class="fas fa-external-link-alt text-slate-400 group-hover:text-blue-600"></i>
+                </a>
+                <a href="javascript:void(0)" class="flex items-center p-4 bg-slate-50 rounded-lg hover:bg-slate-100 hover:border-slate-300 border border-transparent transition-all duration-300 group">
+                    <i class="fab fa-github text-slate-700 text-xl mr-4"></i>
+                    <div class="flex-1">
+                        <div class="font-medium text-slate-800 group-hover:text-slate-700">GitHub</div>
+                        <div class="text-slate-600 text-sm">Open source projects and code repositories</div>
+                    </div>
+                    <i class="fas fa-external-link-alt text-slate-400 group-hover:text-slate-700"></i>
+                </a>
+                <a href="javascript:void(0)" class="flex items-center p-4 bg-slate-50 rounded-lg hover:bg-purple-50 hover:border-purple-200 border border-transparent transition-all duration-300 group">
+                    <i class="fas fa-globe text-purple-600 text-xl mr-4"></i>
+                    <div class="flex-1">
+                        <div class="font-medium text-slate-800 group-hover:text-purple-600">Personal Website</div>
+                        <div class="text-slate-600 text-sm">Portfolio, blog, and project showcases</div>
+                    </div>
+                    <i class="fas fa-external-link-alt text-slate-400 group-hover:text-purple-600"></i>
+                </a>
+            </div>
+
+            <!-- Quick Contact Form -->
+            <div class="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100">
+                <h4 class="font-semibold text-slate-800 mb-2">Quick Message</h4>
+                <p class="text-sm text-slate-600 mb-3">Interested in collaboration or have questions? Send me a quick message!</p>
+                <button class="btn-primary w-full">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    Send Message
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-gradient-to-br from-sky-400 to-blue-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Academic Portfolio Pro</div>
+                        <div class="text-sm text-blue-200">Professional Academic Showcase</div>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-blue-200 text-sm">&copy; 2025 Academic Portfolio Pro. All Rights Reserved.</p>
+                    <p class="text-blue-300 text-xs mt-1">Empowering students to showcase their academic excellence</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactive Features -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileResultsToggle = document.getElementById('mobileResultsToggle');
+        const mobileResultsMenu = document.getElementById('mobileResultsMenu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        mobileResultsToggle.addEventListener('click', function() {
+            mobileResultsMenu.classList.toggle('hidden');
+            const chevron = mobileResultsToggle.querySelector('.fa-chevron-down');
+            chevron.classList.toggle('rotate-180');
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation to external links
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.href.includes('year_') || this.href.includes('login_portal')) {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Loading...';
+                    this.style.pointerEvents = 'none';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.pointerEvents = 'auto';
+                    }, 1000);
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.querySelectorAll('.professional-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Add hover effects to project cards
+        document.querySelectorAll('.bg-white.border').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-4px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Dynamic year display
+        const currentYear = new Date().getFullYear();
+        document.querySelectorAll('footer').forEach(footer => {
+            footer.innerHTML = footer.innerHTML.replace('2025', currentYear);
+        });
+
+        // Add typing effect to main heading with Victor Lungu
+        const mainHeading = document.querySelector('h1');
+        if (mainHeading && mainHeading.textContent.includes('Victor Lungu')) {
+            let text = 'Victor Lungu';
+            let index = 0;
+            mainHeading.textContent = '';
+            
+            function typeWriter() {
+                if (index < text.length) {
+                    mainHeading.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            
+            setTimeout(typeWriter, 500);
+        }
+
+        // Image Carousel Functionality
+        class ImageCarousel {
+            constructor() {
+                this.currentSlide = 0;
+                this.totalSlides = 0;
+                this.autoPlayInterval = null;
+                this.autoPlayDelay = 5000; // 5 seconds
+                this.images = [];
+                
+                this.track = document.getElementById('carouselTrack');
+                this.dotsContainer = document.getElementById('carouselDots');
+                this.prevBtn = document.querySelector('.carousel-prev');
+                this.nextBtn = document.querySelector('.carousel-next');
+                
+                this.init();
+            }
+            
+            init() {
+                if (!this.track) return;
+                
+                // Load images automatically from assets/images folder
+                this.loadImagesFromFolder();
+                
+                // Event listeners
+                this.prevBtn?.addEventListener('click', () => this.prevSlide());
+                this.nextBtn?.addEventListener('click', () => this.nextSlide());
+                
+                // Pause on hover
+                const carouselContainer = document.querySelector('.carousel-container');
+                carouselContainer?.addEventListener('mouseenter', () => this.stopAutoPlay());
+                carouselContainer?.addEventListener('mouseleave', () => this.startAutoPlay());
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.prevSlide();
+                    if (e.key === 'ArrowRight') this.nextSlide();
+                });
+            }
+            
+            loadImagesFromFolder() {
+                // Create carousel slides with placeholder images (will work immediately)
+                const imageFiles = [
+                    { 
+                        name: 'placeholder', 
+                        title: 'Innovation Projects', 
+                        subtitle: 'Enterprise Systems & AI Solutions',
+                        placeholder: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800'
+                    },
+                    { 
+                        name: 'placeholder', 
+                        title: 'Recognition & Awards', 
+                        subtitle: 'Dean\'s List & Academic Honors',
+                        placeholder: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800'
+                    },
+                    { 
+                        name: 'placeholder', 
+                        title: 'University Life', 
+                        subtitle: 'University of Lusaka Experience',
+                        placeholder: 'https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800'
+                    },
+                    { 
+                        name: 'placeholder', 
+                        title: 'Technology Focus', 
+                        subtitle: 'Information Systems & Digital Solutions',
+                        placeholder: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800'
+                    },
+                    { 
+                        name: 'placeholder', 
+                        title: 'Academic Excellence', 
+                        subtitle: 'Research & Development',
+                        placeholder: 'https://images.pexels.com/photos/1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'
+                    }
+                ];
+                
+                // Create carousel slides for each image
+                imageFiles.forEach((imageInfo, index) => {
+                    const slide = this.createSlide(imageInfo, index);
+                    this.track.appendChild(slide);
+                    this.images.push(imageInfo);
+                });
+                
+                this.totalSlides = this.images.length;
+                
+                // Create dots for navigation
+                this.createDots();
+                
+                // Start auto-play after images are loaded
+                this.startAutoPlay();
+            }
+            
+            createSlide(imageInfo, index) {
+                const slide = document.createElement('div');
+                slide.className = 'carousel-slide flex-shrink-0 w-full';
+                slide.innerHTML = `
+                    <div class="relative">
+                        <img src="${imageInfo.placeholder}" 
+                             alt="${imageInfo.title}" 
+                             class="w-full h-80 object-cover rounded-lg shadow-lg" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-lg"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold mb-1">${imageInfo.title}</h3>
+                            <p class="text-sm opacity-90">${imageInfo.subtitle}</p>
+                        </div>
+                    </div>
+                `;
+                return slide;
+            }
+            
+            createDots() {
+                this.dotsContainer.innerHTML = '';
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = `carousel-dot w-3 h-3 rounded-full transition-all duration-300 ${i === 0 ? 'bg-blue-600' : 'bg-slate-300 hover:bg-blue-400'}`;
+                    dot.setAttribute('data-slide', i);
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    this.dotsContainer.appendChild(dot);
+                }
+            }
+            
+            updateCarousel() {
+                if (!this.track) return;
+                
+                const translateX = -this.currentSlide * 100;
+                this.track.style.transform = `translateX(${translateX}%)`;
+                
+                // Update dots
+                const dots = this.dotsContainer.querySelectorAll('.carousel-dot');
+                dots.forEach((dot, index) => {
+                    if (index === this.currentSlide) {
+                        dot.classList.remove('bg-slate-300');
+                        dot.classList.add('bg-blue-600');
+                    } else {
+                        dot.classList.remove('bg-blue-600');
+                        dot.classList.add('bg-slate-300');
+                    }
+                });
+            }
+            
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.updateCarousel();
+            }
+            
+            prevSlide() {
+                this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.updateCarousel();
+            }
+            
+            goToSlide(index) {
+                this.currentSlide = index;
+                this.updateCarousel();
+            }
+            
+            startAutoPlay() {
+                this.stopAutoPlay();
+                this.autoPlayInterval = setInterval(() => {
+                    this.nextSlide();
+                }, this.autoPlayDelay);
+            }
+            
+            stopAutoPlay() {
+                if (this.autoPlayInterval) {
+                    clearInterval(this.autoPlayInterval);
+                    this.autoPlayInterval = null;
+                }
+            }
+        }
+        
+        // Initialize carousel when DOM is loaded
+        const carousel = new ImageCarousel();
+
+        // Video Upload Functionality
+        const videoUpload = document.getElementById('video-upload');
+        const videoGallery = document.getElementById('videoGallery');
+
+        // Persistent storage (IndexedDB) for uploaded videos
+        const DB_NAME = 'videoPortfolioDB';
+        const DB_VERSION = 1;
+        const STORE_NAME = 'videos';
+
+        function openVideoDB() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(DB_NAME, DB_VERSION);
+                request.onupgradeneeded = (event) => {
+                    const db = event.target.result;
+                    if (!db.objectStoreNames.contains(STORE_NAME)) {
+                        const store = db.createObjectStore(STORE_NAME, { keyPath: 'id', autoIncrement: true });
+                        store.createIndex('createdAt', 'createdAt', { unique: false });
+                    }
+                };
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+        }
+
+        async function saveVideoToDB(file) {
+            const db = await openVideoDB();
+            return new Promise((resolve, reject) => {
+                const tx = db.transaction(STORE_NAME, 'readwrite');
+                const store = tx.objectStore(STORE_NAME);
+                const record = {
+                    name: file.name,
+                    type: file.type,
+                    size: file.size,
+                    createdAt: Date.now(),
+                    blob: file
+                };
+                const req = store.add(record);
+                req.onsuccess = () => resolve(req.result);
+                req.onerror = () => reject(req.error);
+            });
+        }
+
+        async function getAllVideosFromDB() {
+            const db = await openVideoDB();
+            return new Promise((resolve, reject) => {
+                const tx = db.transaction(STORE_NAME, 'readonly');
+                const store = tx.objectStore(STORE_NAME);
+                const index = store.index('createdAt');
+                const results = [];
+                index.openCursor(null, 'prev').onsuccess = (event) => {
+                    const cursor = event.target.result;
+                    if (cursor) {
+                        results.push(cursor.value);
+                        cursor.continue();
+                    } else {
+                        resolve(results);
+                    }
+                };
+                tx.onerror = () => reject(tx.error);
+            });
+        }
+
+        function createVideoCardFromRecord(record) {
+            const card = document.createElement('div');
+            card.className = 'bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300';
+
+            const objectUrl = URL.createObjectURL(record.blob);
+
+            card.innerHTML = `
+                <div class="relative">
+                    <video class="w-full h-48 object-cover" controls>
+                        <source src="${objectUrl}" type="${record.type}">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="absolute top-2 right-2">
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">Saved</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-slate-800 mb-2">${record.name.replace(/\.[^/.]+$/, '')}</h3>
+                    <p class="text-sm text-slate-600 mb-3">Uploaded: ${new Date(record.createdAt).toLocaleDateString()}</p>
+                    <div class="flex items-center justify-between text-xs text-slate-500">
+                        <span><i class="fas fa-file-video mr-1"></i>${(record.size / (1024 * 1024)).toFixed(2)} MB</span>
+                        <span><i class="fas fa-calendar mr-1"></i>${new Date(record.createdAt).toLocaleDateString()}</span>
+                    </div>
+                </div>
+            `;
+
+            // Revoke when video element is unloaded
+            card.querySelector('video')?.addEventListener('ended', () => URL.revokeObjectURL(objectUrl));
+            return card;
+        }
+
+        async function renderSavedVideosOnLoad() {
+            try {
+                const records = await getAllVideosFromDB();
+                if (!records.length) return;
+                records.forEach((rec) => {
+                    const card = createVideoCardFromRecord(rec);
+                    videoGallery.appendChild(card);
+                });
+            } catch (err) {
+                // Non-fatal: skip if blocked
+                console.error('Failed to load saved videos', err);
+            }
+        }
+
+        // Load bundled videos from assets/videos/videos.json so they work after unzip
+        async function loadBundledVideos() {
+            try {
+                const res = await fetch('../assets/videos/videos.json', { cache: 'no-store' });
+                if (!res.ok) return;
+                const list = await res.json();
+                list.forEach((item) => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300';
+                    const src = `../assets/videos/${item.filename}`;
+                    card.innerHTML = `
+                        <div class="relative">
+                            <video class="w-full h-48 object-cover" controls ${item.poster ? `poster=\"${item.poster}\"` : ''}>
+                                <source src="${src}" type="${item.type || 'video/mp4'}">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="absolute top-2 right-2">
+                                <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded-full">Bundled</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-slate-800 mb-2">${item.title || item.filename}</h3>
+                            <p class="text-sm text-slate-600 mb-3">Included in project files</p>
+                            <div class="flex items-center justify-between text-xs text-slate-500">
+                                <span><i class="fas fa-file-video mr-1"></i>${item.type || 'video/mp4'}</span>
+                                <span><i class="fas fa-calendar mr-1"></i>${item.uploadedAt ? new Date(item.uploadedAt).toLocaleDateString() : ''}</span>
+                            </div>
+                        </div>
+                    `;
+                    videoGallery.appendChild(card);
+                });
+            } catch (e) {
+                // ignore if file not found
+            }
+        }
+
+        if (videoUpload) {
+            videoUpload.addEventListener('change', async function(e) {
+                const files = Array.from(e.target.files);
+                for (const file of files) {
+                    if (file.type.startsWith('video/')) {
+                        try {
+                            await saveVideoToDB(file);
+                            const videoCard = createVideoCard(file);
+                            videoGallery.appendChild(videoCard);
+                            showNotification(`Video "${file.name}" uploaded and saved!`, 'success');
+                        } catch (err) {
+                            showNotification(`Saved locally without persistence due to a browser limit.`, 'error');
+                            const videoCard = createVideoCard(file);
+                            videoGallery.appendChild(videoCard);
+                        }
+                    } else {
+                        showNotification(`File "${file.name}" is not a valid video format.`, 'error');
+                    }
+                }
+            });
+        }
+
+        function createVideoCard(file) {
+            const card = document.createElement('div');
+            card.className = 'bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300';
+            
+            // Create video URL
+            const videoURL = URL.createObjectURL(file);
+            
+            card.innerHTML = `
+                <div class="relative">
+                    <video class="w-full h-48 object-cover" controls>
+                        <source src="${videoURL}" type="${file.type}">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="absolute top-2 right-2">
+                        <span class="bg-green-500 text-white text-xs px-2 py-1 rounded-full">New</span>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-slate-800 mb-2">${file.name.replace(/\.[^/.]+$/, '')}</h3>
+                    <p class="text-sm text-slate-600 mb-3">Uploaded: ${new Date().toLocaleDateString()}</p>
+                    <div class="flex items-center justify-between text-xs text-slate-500">
+                        <span><i class="fas fa-file-video mr-1"></i>${(file.size / (1024 * 1024)).toFixed(2)} MB</span>
+                        <span><i class="fas fa-calendar mr-1"></i>${new Date().toLocaleDateString()}</span>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // Auto-render previously saved videos and bundled ones on page load
+        renderSavedVideosOnLoad();
+        loadBundledVideos();
+
+        function showNotification(message, type) {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 transition-all duration-300 ${
+                type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+            }`;
+            notification.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} mr-2"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            // Add to page
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Video category filtering
+        const categoryButtons = document.querySelectorAll('[class*="bg-"]:not([class*="bg-white"]):not([class*="bg-slate"])');
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active state from all buttons
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove('ring-2', 'ring-offset-2', 'ring-red-500');
+                });
+                
+                // Add active state to clicked button
+                this.classList.add('ring-2', 'ring-offset-2', 'ring-red-500');
+                
+                // Here you can add filtering logic for videos
+                const category = this.textContent.trim();
+                showNotification(`Filtering by: ${category}`, 'success');
+            });
+        });
+    });
+</script>
+</body>
+</html>

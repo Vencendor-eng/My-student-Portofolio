@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Year 1 Academic Results - Academic Portfolio Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            .print-friendly { 
+                background: white !important; 
+                color: black !important; 
+                box-shadow: none !important; 
+            }
+            .page-break { page-break-before: always; }
+        }
+        
+        .grade-A { background-color: #ECFDF5; color: #059669; }
+        .grade-B { background-color: #F0FDF4; color: #16A34A; }
+        .grade-C { background-color: #FFFBEB; color: #D97706; }
+        .grade-D { background-color: #FEF3C7; color: #B45309; }
+        .grade-F { background-color: #FEF2F2; color: #DC2626; }
+        
+        .animate-fade-in { animation: fadeIn 0.6s ease-in-out; }
+        .animate-slide-up { animation: slideUp 0.4s ease-out; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Facademicp5310back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 relative">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="academic-grid" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                    <circle cx="5" cy="5" r="0.5" fill="#2563EB"/>
+                    <rect x="0" y="0" width="10" height="10" fill="none" stroke="#475569" stroke-width="0.1"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#academic-grid)"/>
+        </svg>
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10 bg-white/90 backdrop-blur-sm border-b border-slate-200 shadow-subtle no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center justify-center w-10 h-10 bg-gradient-academic rounded-lg">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gradient-primary">Academic Portfolio Pro</h1>
+                        <p class="text-xs text-slate-500">Year 1 Academic Results</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="academic_profile_hub.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">
+                        <i class="fas fa-user-graduate mr-2"></i>Profile Hub
+                    </a>
+                    <div class="relative group">
+                        <button class="flex items-center text-blue-600 font-medium">
+                            <i class="fas fa-chart-line mr-2"></i>Academic Results
+                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute top-full right-0 mt-2 w-48 bg-white rounded-lg shadow-elevated border border-slate-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                            <div class="py-2">
+                                <a href="year_1_academic_results.html" class="block px-4 py-2 text-sm text-blue-600 bg-blue-50 font-medium">
+                                    <i class="fas fa-calendar-alt mr-2"></i>Year 1 Results
+                                </a>
+                                <a href="year_2_academic_results.html" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 transition-colors">
+                                    <i class="fas fa-calendar-alt mr-2"></i>Year 2 Results
+                                </a>
+                                <a href="year_3_academic_results.html" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 transition-colors">
+                                    <i class="fas fa-calendar-alt mr-2"></i>Year 3 Results
+                                </a>
+                                <a href="year_4_academic_results.html" class="block px-4 py-2 text-sm text-slate-600 hover:bg-slate-50 transition-colors">
+                                    <i class="fas fa-calendar-alt mr-2"></i>Year 4 Results
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="login_portal.html" class="text-slate-600 hover:text-red-600 font-medium transition-colors">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-blue-600 transition-colors">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden bg-white border-t border-slate-200 hidden">
+            <div class="px-4 py-3 space-y-3">
+                <a href="academic_profile_hub.html" class="block text-slate-600 hover:text-blue-600 font-medium transition-colors">
+                    <i class="fas fa-user-graduate mr-2"></i>Profile Hub
+                </a>
+                <div class="border-t border-slate-200 pt-3">
+                    <p class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Academic Results</p>
+                    <a href="year_1_academic_results.html" class="block text-blue-600 bg-blue-50 px-3 py-2 rounded font-medium">
+                        <i class="fas fa-calendar-alt mr-2"></i>Year 1 Results
+                    </a>
+                    <a href="year_2_academic_results.html" class="block text-slate-600 hover:text-blue-600 px-3 py-2 transition-colors">
+                        <i class="fas fa-calendar-alt mr-2"></i>Year 2 Results
+                    </a>
+                    <a href="year_3_academic_results.html" class="block text-slate-600 hover:text-blue-600 px-3 py-2 transition-colors">
+                        <i class="fas fa-calendar-alt mr-2"></i>Year 3 Results
+                    </a>
+                    <a href="year_4_academic_results.html" class="block text-slate-600 hover:text-blue-600 px-3 py-2 transition-colors">
+                        <i class="fas fa-calendar-alt mr-2"></i>Year 4 Results
+                    </a>
+                </div>
+                <div class="border-t border-slate-200 pt-3">
+                    <a href="login_portal.html" class="block text-red-600 font-medium">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center space-x-2 text-sm text-slate-500 mb-6 no-print">
+            <a href="academic_profile_hub.html" class="hover:text-blue-600 transition-colors">
+                <i class="fas fa-home mr-1"></i>Profile Hub
+            </a>
+            <i class="fas fa-chevron-right text-xs"></i>
+            <span class="text-slate-800 font-medium">Year 1 Academic Results</span>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="professional-card mb-8 animate-fade-in print-friendly">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-slate-800 mb-2">Year 1 Academic Results</h1>
+                    <p class="text-slate-600 text-lg">Foundation Year Performance Overview</p>
+                    <div class="flex items-center space-x-4 mt-3 text-sm text-slate-500">
+                        <span><i class="fas fa-calendar mr-1"></i>Academic Year 2021-2022</span>
+                        <span><i class="fas fa-clock mr-1"></i>Last Updated: September 1, 2025</span>
+                    </div>
+                </div>
+                <div class="mt-4 md:mt-0 flex items-center space-x-3 no-print">
+                    <button onclick="window.print()" class="btn-secondary flex items-center space-x-2">
+                        <i class="fas fa-print"></i>
+                        <span>Print Results</span>
+                    </button>
+                    <a href="academic_profile_hub.html" class="btn-primary flex items-center space-x-2">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Hub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic Summary Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Cumulative GPA -->
+            <div class="professional-card text-center animate-slide-up print-friendly" style="animation-delay: 0.1s">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-trophy text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-1">3.75</h3>
+                <p class="text-slate-600 font-medium">Cumulative GPA</p>
+                <div class="mt-3 bg-blue-100 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 93.75%"></div>
+                </div>
+                <p class="text-xs text-slate-500 mt-2">Excellent Performance</p>
+            </div>
+
+            <!-- Credits Completed -->
+            <div class="professional-card text-center animate-slide-up print-friendly" style="animation-delay: 0.2s">
+                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check-circle text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-1">32</h3>
+                <p class="text-slate-600 font-medium">Credits Completed</p>
+                <div class="mt-3 bg-green-100 rounded-full h-2">
+                    <div class="bg-green-600 h-2 rounded-full" style="width: 100%"></div>
+                </div>
+                <p class="text-xs text-slate-500 mt-2">32/32 Required</p>
+            </div>
+
+            <!-- Semester 1 GPA -->
+            <div class="professional-card text-center animate-slide-up print-friendly" style="animation-delay: 0.3s">
+                <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-star text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-1">3.67</h3>
+                <p class="text-slate-600 font-medium">Fall Semester GPA</p>
+                <div class="mt-3 bg-amber-100 rounded-full h-2">
+                    <div class="bg-amber-600 h-2 rounded-full" style="width: 91.75%"></div>
+                </div>
+                <p class="text-xs text-slate-500 mt-2">Strong Start</p>
+            </div>
+
+            <!-- Semester 2 GPA -->
+            <div class="professional-card text-center animate-slide-up print-friendly" style="animation-delay: 0.4s">
+                <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-chart-line text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-1">3.83</h3>
+                <p class="text-slate-600 font-medium">Spring Semester GPA</p>
+                <div class="mt-3 bg-purple-100 rounded-full h-2">
+                    <div class="bg-purple-600 h-2 rounded-full" style="width: 95.75%"></div>
+                </div>
+                <p class="text-xs text-slate-500 mt-2">Improved Performance</p>
+            </div>
+        </div>
+
+        <!-- Fall Semester Results -->
+        <section class="professional-card mb-8 animate-fade-in print-friendly">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-2xl font-semibold text-slate-800 mb-2">Fall Semester 2021</h2>
+                    <p class="text-slate-600">Foundation courses establishing academic groundwork</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-2xl font-bold text-blue-600">3.67</div>
+                    <div class="text-sm text-slate-500">Semester GPA</div>
+                </div>
+            </div>
+
+            <!-- Desktop Table -->
+            <div class="hidden md:block overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b-2 border-slate-200">
+                            <th class="text-left py-3 px-4 font-semibold text-slate-700">Course Code</th>
+                            <th class="text-left py-3 px-4 font-semibold text-slate-700">Course Title</th>
+                            <th class="text-center py-3 px-4 font-semibold text-slate-700">Credits</th>
+                            <th class="text-center py-3 px-4 font-semibold text-slate-700">Grade</th>
+                            <th class="text-center py-3 px-4 font-semibold text-slate-700">Points</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-mono text-sm text-slate-600">IS 101</td>
+                            <td class="py-4 px-4 font-medium text-slate-800">Introduction to Information Systems</td>
+                            <td class="py-4 px-4 text-center text-slate-600">4</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A</span>
+                            </td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">4.0</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-mono text-sm text-slate-600">MATH 141</td>
+                            <td class="py-4 px-4 font-medium text-slate-800">Calculus I</td>
+                            <td class="py-4 px-4 text-center text-slate-600">4</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="grade-B px-3 py-1 rounded-full font-semibold text-sm">B+</span>
+                            </td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">3.3</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-mono text-sm text-slate-600">ENG 101</td>
+                            <td class="py-4 px-4 font-medium text-slate-800">English Composition</td>
+                            <td class="py-4 px-4 text-center text-slate-600">3</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A-</span>
+                            </td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">3.7</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-mono text-sm text-slate-600">PHYS 201</td>
+                            <td class="py-4 px-4 font-medium text-slate-800">Physics I</td>
+                            <td class="py-4 px-4 text-center text-slate-600">4</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="grade-B px-3 py-1 rounded-full font-semibold text-sm">B</span>
+                            </td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">3.0</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-mono text-sm text-slate-600">HIST 105</td>
+                            <td class="py-4 px-4 font-medium text-slate-800">World History</td>
+                            <td class="py-4 px-4 text-center text-slate-600">3</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A</span>
+                            </td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">4.0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="border-t-2 border-slate-200 bg-slate-50">
+                        <tr>
+                            <td colspan="2" class="py-4 px-4 font-semibold text-slate-800">Fall Semester Totals</td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">18</td>
+                            <td class="py-4 px-4 text-center font-semibold text-blue-600">3.67 GPA</td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">66.0</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <!-- Mobile Cards -->
+            <div class="md:hidden space-y-4">
+                <div class="bg-white border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-semibold text-slate-800">Introduction to Information Systems</h3>
+                            <p class="text-sm text-slate-600 font-mono">IS 101</p>
+                        </div>
+                        <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-slate-600">
+                        <span>Credits: 4</span>
+                        <span>Points: 4.0</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-semibold text-slate-800">Calculus I</h3>
+                            <p class="text-sm text-slate-600 font-mono">MATH 141</p>
+                        </div>
+                        <span class="grade-B px-3 py-1 rounded-full font-semibold text-sm">B+</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-slate-600">
+                        <span>Credits: 4</span>
+                        <span>Points: 3.3</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-semibold text-slate-800">English Composition</h3>
+                            <p class="text-sm text-slate-600 font-mono">ENG 101</p>
+                        </div>
+                        <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A-</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-slate-600">
+                        <span>Credits: 3</span>
+                        <span>Points: 3.7</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-semibold text-slate-800">Physics I</h3>
+                            <p class="text-sm text-slate-600 font-mono">PHYS 201</p>
+                        </div>
+                        <span class="grade-B px-3 py-1 rounded-full font-semibold text-sm">B</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-slate-600">
+                        <span>Credits: 4</span>
+                        <span>Points: 3.0</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-semibold text-slate-800">World History</h3>
+                            <p class="text-sm text-slate-600 font-mono">HIST 105</p>
+                        </div>
+                        <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-slate-600">
+                        <span>Credits: 3</span>
+                        <span>Points: 4.0</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Summary -->
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 mt-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-slate-800">Fall Semester Total</span>
+                        <div class="text-right">
+                            <div class="font-semibold text-blue-600">3.67 GPA</div>
+                            <div class="text-sm text-slate-600">18 Credits</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spring Semester Results -->
+        <section class="professional-card mb-8 animate-fade-in print-friendly">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-2xl font-semibold text-slate-800 mb-2">Spring Semester 2022</h2>
+                    <p class="text-slate-600">Building upon foundation with advanced coursework</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-2xl font-bold text-green-600">3.83</div>
+                    <div class="text-sm text-slate-500">Semester GPA</div>
+                </div>
+            </div>
+
+            <!-- Desktop Table -->
+            <div class="hidden md:block overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b-2 border-slate-200">
+                            <th class="text-left py-3 px-4 font-semibold text-slate-700">Course Code</th>
+                            <th class="text-left py-3 px-4 font-semibold text-slate-700">Course Title</th>
+                            <th class="text-center py-3 px-4 font-semibold text-slate-700">Credits</th>
+                            <th class="text-center py-3 px-4 font-semibold text-slate-700">Grade</th>
+                            <th class="text-center py-3 px-4 font-semibold text-slate-700">Points</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-mono text-sm text-slate-600">IS 102</td>
+                            <td class="py-4 px-4 font-medium text-slate-800">Data Structures & Algorithms</td>
+                            <td class="py-4 px-4 text-center text-slate-600">4</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A</span>
+                            </td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">4.0</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-mono text-sm text-slate-600">MATH 142</td>
+                            <td class="py-4 px-4 font-medium text-slate-800">Calculus II</td>
+                            <td class="py-4 px-4 text-center text-slate-600">4</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A-</span>
+                            </td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">3.7</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-mono text-sm text-slate-600">ENG 102</td>
+                            <td class="py-4 px-4 font-medium text-slate-800">Technical Writing</td>
+                            <td class="py-4 px-4 text-center text-slate-600">3</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A</span>
+                            </td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">4.0</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-mono text-sm text-slate-600">PHYS 202</td>
+                            <td class="py-4 px-4 font-medium text-slate-800">Physics II</td>
+                            <td class="py-4 px-4 text-center text-slate-600">4</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="grade-B px-3 py-1 rounded-full font-semibold text-sm">B+</span>
+                            </td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">3.3</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="py-4 px-4 font-mono text-sm text-slate-600">PHIL 201</td>
+                            <td class="py-4 px-4 font-medium text-slate-800">Logic & Critical Thinking</td>
+                            <td class="py-4 px-4 text-center text-slate-600">3</td>
+                            <td class="py-4 px-4 text-center">
+                                <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A</span>
+                            </td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">4.0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="border-t-2 border-slate-200 bg-slate-50">
+                        <tr>
+                            <td colspan="2" class="py-4 px-4 font-semibold text-slate-800">Spring Semester Totals</td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">18</td>
+                            <td class="py-4 px-4 text-center font-semibold text-green-600">3.83 GPA</td>
+                            <td class="py-4 px-4 text-center font-semibold text-slate-800">69.0</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <!-- Mobile Cards for Spring -->
+            <div class="md:hidden space-y-4">
+                <div class="bg-white border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-semibold text-slate-800">Data Structures & Algorithms</h3>
+                            <p class="text-sm text-slate-600 font-mono">IS 102</p>
+                        </div>
+                        <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-slate-600">
+                        <span>Credits: 4</span>
+                        <span>Points: 4.0</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-semibold text-slate-800">Calculus II</h3>
+                            <p class="text-sm text-slate-600 font-mono">MATH 142</p>
+                        </div>
+                        <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A-</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-slate-600">
+                        <span>Credits: 4</span>
+                        <span>Points: 3.7</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-semibold text-slate-800">Technical Writing</h3>
+                            <p class="text-sm text-slate-600 font-mono">ENG 102</p>
+                        </div>
+                        <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-slate-600">
+                        <span>Credits: 3</span>
+                        <span>Points: 4.0</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-semibold text-slate-800">Physics II</h3>
+                            <p class="text-sm text-slate-600 font-mono">PHYS 202</p>
+                        </div>
+                        <span class="grade-B px-3 py-1 rounded-full font-semibold text-sm">B+</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-slate-600">
+                        <span>Credits: 4</span>
+                        <span>Points: 3.3</span>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-lg p-4">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-semibold text-slate-800">Logic & Critical Thinking</h3>
+                            <p class="text-sm text-slate-600 font-mono">PHIL 201</p>
+                        </div>
+                        <span class="grade-A px-3 py-1 rounded-full font-semibold text-sm">A</span>
+                    </div>
+                    <div class="flex justify-between text-sm text-slate-600">
+                        <span>Credits: 3</span>
+                        <span>Points: 4.0</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Summary -->
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 mt-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-slate-800">Spring Semester Total</span>
+                        <div class="text-right">
+                            <div class="font-semibold text-green-600">3.83 GPA</div>
+                            <div class="text-sm text-slate-600">18 Credits</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievement Highlights -->
+        <section class="professional-card mb-8 animate-fade-in print-friendly">
+            <h2 class="text-2xl font-semibold text-slate-800 mb-6">Year 1 Achievement Highlights</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Academic Excellence -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-medal text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-green-800">Academic Excellence</h3>
+                            <p class="text-green-600 text-sm">Outstanding Performance</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-green-700">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-2 text-green-500"></i>
+                            Maintained 3.75+ cumulative GPA
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-2 text-green-500"></i>
+                            Improved from 3.67 to 3.83 GPA
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle mr-2 text-green-500"></i>
+                            Completed all 32 required credits
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Subject Strengths -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-brain text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-blue-800">Subject Strengths</h3>
+                            <p class="text-blue-600 text-sm">Core Competencies</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-blue-700">
+                        <li class="flex items-center">
+                            <i class="fas fa-star mr-2 text-blue-500"></i>
+                            Information Systems: Consistent A grades
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-star mr-2 text-blue-500"></i>
+                            English & Writing: Strong communication
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-star mr-2 text-blue-500"></i>
+                            Mathematics: Solid foundation built
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Progress Analysis -->
+            <div class="mt-6 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-lg p-6">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-amber-800">Academic Growth Analysis</h3>
+                        <p class="text-amber-600 text-sm">Semester-over-semester improvement</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    <div class="bg-white rounded-lg p-4 border border-amber-200">
+                        <div class="text-2xl font-bold text-amber-700">+0.16</div>
+                        <div class="text-sm text-amber-600">GPA Improvement</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 border border-amber-200">
+                        <div class="text-2xl font-bold text-amber-700">100%</div>
+                        <div class="text-sm text-amber-600">Credit Completion</div>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 border border-amber-200">
+                        <div class="text-2xl font-bold text-amber-700">70%</div>
+                        <div class="text-sm text-amber-600">A-Level Grades</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Navigation -->
+        <section class="professional-card animate-fade-in no-print">
+            <h2 class="text-xl font-semibold text-slate-800 mb-4">Continue Academic Journey</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <a href="year_2_academic_results.html" class="flex items-center p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4 group-hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-arrow-right text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-blue-800">Year 2 Results</h3>
+                        <p class="text-blue-600 text-sm">Advanced coursework</p>
+                    </div>
+                </a>
+
+                <a href="academic_profile_hub.html" class="flex items-center p-4 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4 group-hover:bg-green-600 transition-colors">
+                        <i class="fas fa-user-graduate text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-green-800">Profile Hub</h3>
+                        <p class="text-green-600 text-sm">Complete overview</p>
+                    </div>
+                </a>
+
+                <a href="year_4_academic_results.html" class="flex items-center p-4 bg-gradient-to-r from-purple-50 to-violet-50 border border-purple-200 rounded-lg hover:shadow-md transition-all group">
+                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mr-4 group-hover:bg-purple-600 transition-colors">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-purple-800">Final Year</h3>
+                        <p class="text-purple-600 text-sm">Graduation results</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-slate-800 text-white py-8 mt-16 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold">Academic Portfolio Pro</h3>
+                    </div>
+                    <p class="text-slate-300 text-sm">Transforming academic achievements into professional opportunities through comprehensive portfolio presentation.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Academic Years</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="year_1_academic_results.html" class="hover:text-white transition-colors">Year 1 Results</a></li>
+                        <li><a href="year_2_academic_results.html" class="hover:text-white transition-colors">Year 2 Results</a></li>
+                        <li><a href="year_3_academic_results.html" class="hover:text-white transition-colors">Year 3 Results</a></li>
+                        <li><a href="year_4_academic_results.html" class="hover:text-white transition-colors">Year 4 Results</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Portfolio Sections</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="academic_profile_hub.html" class="hover:text-white transition-colors">Profile Hub</a></li>
+                        <li><a href="login_portal.html" class="hover:text-white transition-colors">Login Portal</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-700 mt-8 pt-8 text-center text-sm text-slate-400">
+                <p>&copy; 2025 Academic Portfolio Pro. All Rights Reserved.</p>
+                <p class="mt-1">Empowering students to showcase their academic excellence and professional potential.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                });
+            }
+
+            // Add animation delays to cards
+            const cards = document.querySelectorAll('.animate-slide-up');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add hover effects to table rows
+            const tableRows = document.querySelectorAll('tbody tr');
+            tableRows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(4px)';
+                });
+                row.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+
+            // Print functionality enhancement
+            window.addEventListener('beforeprint', function() {
+                document.body.classList.add('printing');
+            });
+
+            window.addEventListener('afterprint', function() {
+                document.body.classList.remove('printing');
+            });
+
+            // Add loading animation
+            setTimeout(() => {
+                document.querySelectorAll('.animate-fade-in').forEach(element => {
+                    element.style.opacity = '1';
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>

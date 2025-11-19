@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Portal - Academic Portfolio Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Facademicp5310back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="academic-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="10" cy="10" r="1" fill="#2563EB"/>
+                    <path d="M5,5 L15,15 M15,5 L5,15" stroke="#475569" stroke-width="0.5" opacity="0.3"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#academic-pattern)"/>
+        </svg>
+    </div>
+
+    <!-- Floating Academic Elements -->
+    <div class="absolute top-20 left-10 w-16 h-16 bg-blue-100 rounded-full opacity-20 animate-pulse"></div>
+    <div class="absolute top-40 right-20 w-12 h-12 bg-amber-100 rounded-lg opacity-30 transform rotate-45"></div>
+    <div class="absolute bottom-32 left-20 w-20 h-20 bg-slate-200 rounded-full opacity-15"></div>
+    <div class="absolute bottom-20 right-10 w-14 h-14 bg-blue-200 rounded-lg opacity-25 transform -rotate-12"></div>
+
+    <!-- Main Container -->
+    <div class="relative z-10 min-h-screen flex items-center justify-center px-4 py-8">
+        <div class="w-full max-w-md">
+            <!-- Logo and Branding -->
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-academic rounded-2xl mb-6 shadow-elevated">
+                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                    </svg>
+                </div>
+                <h1 class="text-3xl font-bold text-gradient-primary mb-2">Academic Portfolio Pro</h1>
+                <p class="text-slate-600 text-lg font-medium">Transform Your Academic Journey into Professional Success</p>
+            </div>
+
+            <!-- Login Form Card -->
+            <div class="professional-card">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-semibold text-slate-800 mb-2">Welcome Back</h2>
+                    <p class="text-slate-600">Access your academic portfolio and showcase your achievements</p>
+                </div>
+
+                <form id="loginForm" class="space-y-6">
+                    <!-- Username/Email Field -->
+                    <div class="space-y-2">
+                        <label for="username" class="block text-sm font-medium text-slate-700">
+                            <i class="fas fa-user mr-2 text-blue-600"></i>Username or Email
+                        </label>
+                        <input type="text" id="username" name="username" class="input-field" placeholder="Enter your username or email" required />
+                        <div id="usernameError" class="text-error text-sm hidden">
+                            <i class="fas fa-exclamation-circle mr-1"></i>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="space-y-2">
+                        <label for="password" class="block text-sm font-medium text-slate-700">
+                            <i class="fas fa-lock mr-2 text-blue-600"></i>Password
+                        </label>
+                        <div class="relative">
+                            <input type="password" id="password" name="password" class="input-field pr-12" placeholder="Enter your password" required />
+                            <button type="button" id="togglePassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors">
+                                <i class="fas fa-eye" id="eyeIcon"></i>
+                            </button>
+                        </div>
+                        <div id="passwordError" class="text-error text-sm hidden">
+                            <i class="fas fa-exclamation-circle mr-1"></i>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" id="rememberMe" name="rememberMe" class="w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500 focus:ring-2" />
+                            <span class="text-sm text-slate-600">Remember me</span>
+                        </label>
+                        <a href="javascript:void(0)" class="text-sm text-blue-600 hover:text-blue-700 font-medium transition-colors">
+                            Forgot password?
+                        </a>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button type="submit" id="loginButton" class="w-full btn-primary flex items-center justify-center space-x-2 py-3">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Access Portfolio</span>
+                    </button>
+
+                    <!-- Success Message -->
+                    <div id="successMessage" class="hidden bg-success-50 border border-success-200 text-success-700 px-4 py-3 rounded-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            <span>Login successful! Redirecting to your portfolio...</span>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Security Notice -->
+                <div class="mt-6 p-4 bg-slate-50 rounded-lg border border-slate-200">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-shield-alt text-blue-600 mt-1"></i>
+                        <div>
+                            <h4 class="text-sm font-medium text-slate-800 mb-1">Secure Access</h4>
+                            <p class="text-xs text-slate-600">Your academic data is protected with industry-standard security measures. We never share your information with third parties.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Navigation -->
+            <div class="mt-8 text-center">
+                <p class="text-slate-600 text-sm mb-4">Quick Access to Portfolio Sections:</p>
+                <div class="flex flex-wrap justify-center gap-2">
+                    <a href="academic_profile_hub.html" class="inline-flex items-center px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-slate-600 hover:bg-slate-50 transition-colors">
+                        <i class="fas fa-user-graduate mr-1"></i>Profile
+                    </a>
+                    <a href="year_1_academic_results.html" class="inline-flex items-center px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-slate-600 hover:bg-slate-50 transition-colors">
+                        <i class="fas fa-chart-line mr-1"></i>Year 1
+                    </a>
+                    <a href="year_2_academic_results.html" class="inline-flex items-center px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-slate-600 hover:bg-slate-50 transition-colors">
+                        <i class="fas fa-chart-line mr-1"></i>Year 2
+                    </a>
+                    <a href="year_3_academic_results.html" class="inline-flex items-center px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-slate-600 hover:bg-slate-50 transition-colors">
+                        <i class="fas fa-chart-line mr-1"></i>Year 3
+                    </a>
+                    <a href="year_4_academic_results.html" class="inline-flex items-center px-3 py-1 bg-white border border-slate-200 rounded-full text-xs text-slate-600 hover:bg-slate-50 transition-colors">
+                        <i class="fas fa-chart-line mr-1"></i>Year 4
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2025 Academic Portfolio Pro. All Rights Reserved.</p>
+                <p class="mt-1">Empowering students to showcase their academic excellence</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Form Validation and Interactions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const togglePassword = document.getElementById('togglePassword');
+            const eyeIcon = document.getElementById('eyeIcon');
+            const rememberMeCheckbox = document.getElementById('rememberMe');
+            const loginButton = document.getElementById('loginButton');
+            const successMessage = document.getElementById('successMessage');
+
+            // Mock credentials for demonstration
+            const validCredentials = [
+                { username: 'student@academic.edu', password: 'AcademicPro2025' },
+                { username: 'john.doe', password: 'Portfolio123' },
+                { username: 'academic.user', password: 'Success2025' }
+            ];
+
+            // Password visibility toggle
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                eyeIcon.classList.toggle('fa-eye');
+                eyeIcon.classList.toggle('fa-eye-slash');
+            });
+
+            // Real-time validation
+            usernameInput.addEventListener('input', function() {
+                validateField('username');
+            });
+
+            passwordInput.addEventListener('input', function() {
+                validateField('password');
+            });
+
+            // Load remembered credentials
+            if (localStorage.getItem('rememberMe') === 'true') {
+                rememberMeCheckbox.checked = true;
+                const savedUsername = localStorage.getItem('savedUsername');
+                if (savedUsername) {
+                    usernameInput.value = savedUsername;
+                }
+            }
+
+            // Form submission
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const username = usernameInput.value.trim();
+                const password = passwordInput.value;
+                const rememberMe = rememberMeCheckbox.checked;
+
+                // Validate all fields
+                const isUsernameValid = validateField('username');
+                const isPasswordValid = validateField('password');
+
+                if (isUsernameValid && isPasswordValid) {
+                    // Check credentials
+                    const isValidCredential = validCredentials.some(cred => 
+                        (cred.username === username || cred.username.toLowerCase() === username.toLowerCase()) && 
+                        cred.password === password
+                    );
+
+                    if (isValidCredential) {
+                        // Handle remember me
+                        if (rememberMe) {
+                            localStorage.setItem('rememberMe', 'true');
+                            localStorage.setItem('savedUsername', username);
+                        } else {
+                            localStorage.removeItem('rememberMe');
+                            localStorage.removeItem('savedUsername');
+                        }
+
+                        // Show success message
+                        successMessage.classList.remove('hidden');
+                        loginButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Accessing Portfolio...';
+                        loginButton.disabled = true;
+
+                        // Simulate loading and redirect
+                        setTimeout(() => {
+                            window.location.href = 'academic_profile_hub.html';
+                        }, 2000);
+                    } else {
+                        showError('password', 'Invalid username or password. Please try again.');
+                        passwordInput.focus();
+                    }
+                }
+            });
+
+            function validateField(fieldName) {
+                const field = document.getElementById(fieldName);
+                const errorDiv = document.getElementById(fieldName + 'Error');
+                const errorSpan = errorDiv.querySelector('span');
+                const value = field.value.trim();
+
+                // Remove previous error states
+                field.classList.remove('error', 'success');
+                errorDiv.classList.add('hidden');
+
+                if (fieldName === 'username') {
+                    if (value === '') {
+                        showError('username', 'Username or email is required');
+                        return false;
+                    } else if (value.length < 3) {
+                        showError('username', 'Username must be at least 3 characters');
+                        return false;
+                    } else if (value.includes('@') && !isValidEmail(value)) {
+                        showError('username', 'Please enter a valid email address');
+                        return false;
+                    } else {
+                        field.classList.add('success');
+                        return true;
+                    }
+                }
+
+                if (fieldName === 'password') {
+                    if (value === '') {
+                        showError('password', 'Password is required');
+                        return false;
+                    } else if (value.length < 6) {
+                        showError('password', 'Password must be at least 6 characters');
+                        return false;
+                    } else {
+                        field.classList.add('success');
+                        return true;
+                    }
+                }
+
+                return true;
+            }
+
+            function showError(fieldName, message) {
+                const field = document.getElementById(fieldName);
+                const errorDiv = document.getElementById(fieldName + 'Error');
+                const errorSpan = errorDiv.querySelector('span');
+
+                field.classList.add('error');
+                errorSpan.textContent = message;
+                errorDiv.classList.remove('hidden');
+            }
+
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            // Add subtle animations on load
+            setTimeout(() => {
+                document.querySelector('.professional-card').classList.add('animate-fade-in');
+            }, 100);
+        });
+    </script>
+</body>
+</html>
